@@ -18,8 +18,12 @@ public class ToTalPane extends JPanel {
         this.setLayout(card);
         //定义字符数组，为卡片命名
         String cardName[] = {"0", "1"};
-        b1 = new JButton("视频");
-        b2 = new JButton("音频");
+        b1 = new RButton("视频");
+        b2 = new RButton2("音频");
+        b1.setPreferredSize(new Dimension(120, 120));
+        b1.setFont(new MyFont().getDefinedFont((float) 35.0));
+        b2.setPreferredSize(new Dimension(80, 80));
+        b2.setFont(new MyFont().getDefinedFont((float) 22.0));
         this.add(cardName[0], videoContentPane);
         this.add(cardName[1], audioContentPane);
         ToTalPane self = this;

@@ -1,25 +1,30 @@
 package com.yxn.BePlayer.view;
 
-import com.yxn.BePlayer.MediaPlayer.VideoMediaPlayer;
+import com.yxn.BePlayer.mediaPlayer.VideoMediaPlayer;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
 
-public class VideoButtonsPane extends JPanel  {
+public class VideoButtonsPane extends JPanel {
     private static JButton openButton;
     private static JFileChooser chooser;
     private static JTextField pathField;
-    public VideoButtonsPane(){
+
+    public VideoButtonsPane() {
         openButton = new JButton();
         pathField = new JTextField();
-        pathField.setColumns(50);
+        pathField.setColumns(35);
+        pathField.setFont(new MyFont().getDefinedFont((float) 15.0));
         openButton.setText("选择");
         this.setLayout(new FlowLayout());
         openButton.setFocusPainted(false);
+        openButton.setFont(new MyFont().getDefinedFont((float) 20.0));
+        openButton.setBackground(new Color(30, 165, 223));
         this.add(pathField);
         this.add(openButton);
+        this.setBackground(new Color(60, 62, 64));
 
         // 选择视频文件，进行播放
         openButton.addActionListener((e) -> {

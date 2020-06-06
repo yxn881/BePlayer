@@ -1,6 +1,6 @@
 package com.yxn.BePlayer.view;
 
-import com.yxn.BePlayer.MediaPlayer.VideoMediaPlayer;
+import com.yxn.BePlayer.mediaPlayer.VideoMediaPlayer;
 
 import javax.swing.*;
 import java.awt.*;

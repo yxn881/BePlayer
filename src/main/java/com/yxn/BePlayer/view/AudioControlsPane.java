@@ -1,6 +1,6 @@
 package com.yxn.BePlayer.view;
 
-import com.yxn.BePlayer.MediaPlayer.AudioMediaPlayer;
+import com.yxn.BePlayer.mediaPlayer.AudioMediaPlayer;
 import com.yxn.BePlayer.components.MediaTime;
 import uk.co.caprica.vlcj.player.base.MediaPlayer;
 import uk.co.caprica.vlcj.player.base.MediaPlayerEventAdapter;
@@ -8,6 +8,7 @@ import uk.co.caprica.vlcj.player.base.MediaPlayerEventAdapter;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -23,23 +24,38 @@ public class AudioControlsPane extends JPanel {
     public AudioControlsPane() {
         label1 = new JLabel("00:00");
         label2 = new JLabel("00:00");
+        label1.setFont(new MyFont().getDefinedFont((float) 20.0));
+        label2.setFont(new MyFont().getDefinedFont((float) 20.0));
+        label1.setForeground(Color.WHITE);
+        label2.setForeground(Color.WHITE);
         mediaTime = new MediaTime();
         progressBar = new JProgressBar();
         this.add(label1);
         this.add(progressBar);
         this.add(label2);
         progressBar.setStringPainted(true);
+        progressBar.setBorderPainted(false);
+        progressBar.setFont(new MyFont().getDefinedFont((float) 20.0));
         //添加声音控制块
         slider = new JSlider();
+        slider.setBackground(new Color(60, 62, 64));
+        slider.setUI(new MySliderUI(slider));
         slider.setValue(80);
         slider.setMaximum(100);
         this.add(slider);
         rewindButton = new JButton("<<");
+        rewindButton.setFont(new MyFont().getDefinedFont((float) 20.0));
+        rewindButton.setBackground(new Color(30, 165, 223));
         this.add(rewindButton);
         pauseButton = new JButton("Pause");
+        pauseButton.setFont(new MyFont().getDefinedFont((float) 20.0));
+        pauseButton.setBackground(new Color(30, 165, 223));
         this.add(pauseButton);
         skipButton = new JButton(">>");
+        skipButton.setFont(new MyFont().getDefinedFont((float) 20.0));
+        skipButton.setBackground(new Color(30, 165, 223));
         this.add(skipButton);
+        this.setBackground(new Color(60, 62, 64));
 
         AudioMediaPlayer.getInstance().mediaPlayer().events().addMediaPlayerEventListener(new MediaPlayerEventAdapter() {
             @Override
@@ -127,6 +143,7 @@ public class AudioControlsPane extends JPanel {
                 AudioMediaPlayer.getInstance().mediaPlayer().controls().skipTime(10000);
             }
         });
+
         progressBar.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

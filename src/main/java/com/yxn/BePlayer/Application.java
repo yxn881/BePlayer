@@ -6,6 +6,7 @@ public class Application {
 
     public static void main(String[] args) {
         PlayerFrame playerFrame = new PlayerFrame();
+        playerFrame.setTitle("BePlayer");
 
     }
 

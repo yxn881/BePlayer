@@ -1,16 +1,17 @@
 package com.yxn.BePlayer.view;
 
-import com.yxn.BePlayer.MediaPlayer.AudioMediaPlayer;
-import com.yxn.BePlayer.MediaPlayer.VideoMediaPlayer;
+import com.yxn.BePlayer.mediaPlayer.AudioMediaPlayer;
+import com.yxn.BePlayer.mediaPlayer.VideoMediaPlayer;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class PlayerFrame  extends JFrame {
+public class PlayerFrame extends JFrame {
     private static ChangePane changePane;
-    public PlayerFrame(){
+
+    public PlayerFrame() {
 
         changePane = new ChangePane();
         Container container = this.getContentPane();
@@ -18,6 +19,7 @@ public class PlayerFrame  extends JFrame {
         container.add(changePane, BorderLayout.WEST);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setSize(new Dimension(1000, 600));
+        this.setLocationRelativeTo(null);//屏幕居中显示
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent event) {
