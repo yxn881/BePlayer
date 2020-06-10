@@ -17,6 +17,7 @@ public class VideoContentPane extends JPanel {
         this.add(videoControlsPane, BorderLayout.SOUTH);
         this.add(VideoMediaPlayer.getInstance(), BorderLayout.CENTER);
         this.add(videoButtonsPane, BorderLayout.NORTH);
+        this.setOpaque(false);
     }
 
 }

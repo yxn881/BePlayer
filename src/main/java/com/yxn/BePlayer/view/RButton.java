@@ -13,7 +13,7 @@ class RButton extends JButton {
         setPreferredSize(size);
 //这个调用使JButton不画背景，而允许我们画一个圆的背景。
         setContentAreaFilled(false);
-        this.setBackground(new Color(254, 147, 19));
+        this.setBackground(Color.decode("#fcb49e"));
         this.setBorderPainted(false);
     }
 
@@ -21,7 +21,7 @@ class RButton extends JButton {
     protected void paintComponent(Graphics g) {
         if (getModel().isArmed()) {
 // 你可以选一个高亮的颜色作为圆形按钮类的属性
-            g.setColor(Color.decode("#FADD6B"));
+            g.setColor(Color.decode("#f57da1"));
         } else {
             g.setColor(getBackground());
         }

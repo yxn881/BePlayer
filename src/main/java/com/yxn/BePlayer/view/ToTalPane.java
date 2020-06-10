@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ToTalPane extends JPanel {
+public class ToTalPane extends JPanel{
     private static AudioContentPane audioContentPane;
     private static VideoContentPane videoContentPane;
     public static JButton b1, b2;
@@ -20,12 +20,14 @@ public class ToTalPane extends JPanel {
         String cardName[] = {"0", "1"};
         b1 = new RButton("视频");
         b2 = new RButton2("音频");
-        b1.setPreferredSize(new Dimension(120, 120));
-        b1.setFont(new MyFont().getDefinedFont((float) 35.0));
+        b1.setPreferredSize(new Dimension(80, 80));
+        b1.setFont(new MyFont().getDefinedFont((float) 22.0));
         b2.setPreferredSize(new Dimension(80, 80));
         b2.setFont(new MyFont().getDefinedFont((float) 22.0));
         this.add(cardName[0], videoContentPane);
         this.add(cardName[1], audioContentPane);
+//        this.setOpaque(false);
+        this.setBackground(Color.decode("#f57da1"));
         ToTalPane self = this;
         b1.addActionListener(new ActionListener() {
             @Override

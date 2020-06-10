@@ -5,8 +5,8 @@ import javax.swing.plaf.basic.BasicSliderUI;
 import java.awt.*;
 
 public class MySliderUI extends BasicSliderUI {
-    private static final Color BACKGROUND01 = new Color(13, 144, 243, 250);
-    private static final Color BACKGROUND02 = new Color(234, 236, 246);
+    private static final Color BACKGROUND01 = new Color(255, 255, 255);
+    private static final Color BACKGROUND02 = new Color(255, 255, 255);
 
     /**
      * Constructs a {@code BasicSliderUI}.

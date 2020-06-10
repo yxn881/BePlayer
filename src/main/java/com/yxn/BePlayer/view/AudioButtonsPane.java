@@ -15,17 +15,19 @@ public class AudioButtonsPane extends JPanel {
 
     public AudioButtonsPane() {
         openButton = new JButton();
-        pathField = new JTextField("");
+        pathField = new JTextField();
         pathField.setColumns(35);
         pathField.setFont(new MyFont().getDefinedFont((float) 15.0));
         openButton.setText("选择");
-        openButton.setFont(new MyFont().getDefinedFont((float) 20.0));
-        openButton.setBackground(new Color(30, 165, 223));
         this.setLayout(new FlowLayout());
         openButton.setFocusPainted(false);
+        openButton.setFont(new MyFont().getDefinedFont((float) 15.0));
+        openButton.setBackground(Color.WHITE);
+        openButton.setForeground(Color.decode("#f57da1"));
         this.add(pathField);
         this.add(openButton);
         this.setBackground(new Color(60, 62, 64));
+        this.setOpaque(false);
 
 // 选择音频文件，进行播放
         openButton.addActionListener((e) -> {

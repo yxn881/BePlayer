@@ -24,8 +24,8 @@ public class VideoControlsPane extends JPanel {
     public VideoControlsPane() {
         label1 = new JLabel("00:00");
         label2 = new JLabel("00:00");
-        label1.setFont(new MyFont().getDefinedFont((float) 20.0));
-        label2.setFont(new MyFont().getDefinedFont((float) 20.0));
+        label1.setFont(new MyFont().getDefinedFont((float) 15.0));
+        label2.setFont(new MyFont().getDefinedFont((float) 15.0));
         label1.setForeground(Color.WHITE);
         label2.setForeground(Color.WHITE);
         mediaTime = new MediaTime();
@@ -35,27 +35,32 @@ public class VideoControlsPane extends JPanel {
         this.add(label2);
         progressBar.setStringPainted(true);
         progressBar.setBorderPainted(false);
-        progressBar.setFont(new MyFont().getDefinedFont((float) 20.0));
+        progressBar.setFont(new MyFont().getDefinedFont((float) 15.0));
+        progressBar.setForeground(Color.decode("#f57da1"));
         //添加声音控制块
         slider = new JSlider();
         slider.setValue(80);
         slider.setMaximum(100);
-        slider.setBackground(new Color(60, 62, 64));
+        slider.setOpaque(false);
         slider.setUI(new MySliderUI(slider));
         this.add(slider);
         rewindButton = new JButton("<<");
-        rewindButton.setFont(new MyFont().getDefinedFont((float) 20.0));
-        rewindButton.setBackground(new Color(30, 165, 223));
+        rewindButton.setFont(new MyFont().getDefinedFont((float) 15.0));
+        rewindButton.setBackground(Color.WHITE);
+        rewindButton.setForeground(Color.decode("#f57da1"));
         this.add(rewindButton);
         pauseButton = new JButton("Pause");
-        pauseButton.setFont(new MyFont().getDefinedFont((float) 20.0));
-        pauseButton.setBackground(new Color(30, 165, 223));
+        pauseButton.setFont(new MyFont().getDefinedFont((float) 15.0));
+        pauseButton.setBackground(Color.WHITE);
+        pauseButton.setForeground(Color.decode("#f57da1"));
         this.add(pauseButton);
         skipButton = new JButton(">>");
-        skipButton.setFont(new MyFont().getDefinedFont((float) 20.0));
-        skipButton.setBackground(new Color(30, 165, 223));
+        skipButton.setFont(new MyFont().getDefinedFont((float) 15.0));
+        skipButton.setBackground(Color.WHITE);
+        skipButton.setForeground(Color.decode("#f57da1"));
         this.add(skipButton);
-        this.setBackground(new Color(60, 62, 64));
+        this.setOpaque(false);
+
 
 
         VideoMediaPlayer.getInstance().mediaPlayer().events().addMediaPlayerEventListener(new MediaPlayerEventAdapter() {

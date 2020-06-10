@@ -14,7 +14,10 @@ public class PlayerFrame extends JFrame {
     public PlayerFrame() {
 
         changePane = new ChangePane();
-        Container container = this.getContentPane();
+        Image image = new ImageIcon("src\\main\\java\\com\\yxn\\BePlayer\\image\\g4.jpg").getImage();
+        Container container = new ImagePanel(image);
+        this.setContentPane(container);
+        container.setLayout(new BorderLayout());
         container.add(ToTalPane.getInstance(), BorderLayout.CENTER);
         container.add(changePane, BorderLayout.WEST);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);

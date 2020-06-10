@@ -17,5 +17,6 @@ public class AudioContentPane extends JPanel {
         this.add(audioControlsPane, BorderLayout.SOUTH);
         this.add(panel, BorderLayout.CENTER);
         this.add(audioButtonsPane, BorderLayout.NORTH);
+        this.setOpaque(false);
     }
 }

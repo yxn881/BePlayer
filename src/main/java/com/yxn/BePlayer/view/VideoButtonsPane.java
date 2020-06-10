@@ -20,11 +20,13 @@ public class VideoButtonsPane extends JPanel {
         openButton.setText("选择");
         this.setLayout(new FlowLayout());
         openButton.setFocusPainted(false);
-        openButton.setFont(new MyFont().getDefinedFont((float) 20.0));
-        openButton.setBackground(new Color(30, 165, 223));
+        openButton.setFont(new MyFont().getDefinedFont((float) 15.0));
+        openButton.setBackground(Color.WHITE);
+        openButton.setForeground(Color.decode("#f57da1"));
         this.add(pathField);
         this.add(openButton);
         this.setBackground(new Color(60, 62, 64));
+        this.setOpaque(false);
 
         // 选择视频文件，进行播放
         openButton.addActionListener((e) -> {
